@@ -1,0 +1,107 @@
+buildscript {
+    ext {
+        appName = 'ktx-template'
+        kotlinVersion = '1.2.41'
+        kotlinCoroutinesVersion = '0.22.5'
+        gdxVersion = '1.9.7'
+        ktxVersion = '1.9.8-b2'
+        box2dlightsVersion = '1.4'
+    }
+
+    repositories {
+        google()
+        mavenLocal()
+        mavenCentral()
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "com.badlogicgames.gdx:gdx-tools:$gdxVersion"
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+allprojects {
+    version = '1.0'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+        maven { url 'https://oss.sonatype.org/content/repositories/releases/' }
+    }
+}
+
+project(':desktop') {
+    apply plugin: 'kotlin'
+    apply plugin: 'application'
+
+    kotlin {
+        experimental {
+            coroutines 'enable'
+        }
+    }
+}
+
+project(':android') {
+    apply plugin: 'android'
+    apply plugin: 'kotlin-android'
+
+    kotlin {
+        experimental {
+            coroutines 'enable'
+        }
+    }
+
+    configurations { natives }
+
+    dependencies {
+        implementation project(':core')
+        implementation "io.github.libktx:ktx-app:$ktxVersion"
+        implementation "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-arm64-v8a"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86_64"
+        implementation "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
+        natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-armeabi"
+        natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-armeabi-v7a"
+        natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-arm64-v8a"
+        natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-x86"
+        natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-x86_64"
+        implementation "com.badlogicgames.gdx:gdx-controllers:$gdxVersion"
+        implementation "com.badlogicgames.gdx:gdx-controllers-android:$gdxVersion"
+        implementation "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
+        natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi"
+        natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-v7a"
+        natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-arm64-v8a"
+        natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86"
+        natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86_64"
+        implementation "com.badlogicgames.box2dlights:box2dlights:$box2dlightsVersion"
+    }
+}
+
+project(':core') {
+    apply plugin: 'kotlin'
+
+    kotlin {
+        experimental {
+            coroutines 'enable'
+        }
+    }
+}
+
+import com.badlogic.gdx.tools.texturepacker.TexturePacker
+task pack << {
+    TexturePacker.process(
+            'atlas', // Raw assets path.
+            'assets', // Output directory.
+            'skin' // Name of the generated atlas (without extension).
+    )
+}

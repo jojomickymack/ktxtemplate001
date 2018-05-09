@@ -1,0 +1,41 @@
+apply plugin: 'kotlin'
+
+sourceCompatibility = 1.6
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutinesVersion"
+    implementation "com.badlogicgames.gdx:gdx:$gdxVersion"
+    implementation "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
+    implementation "com.badlogicgames.gdx:gdx-controllers:$gdxVersion"
+    implementation "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
+    implementation "com.badlogicgames.box2dlights:box2dlights:$box2dlightsVersion"
+    implementation "io.github.libktx:ktx-log:$ktxVersion"
+    implementation "io.github.libktx:ktx-scene2d:$ktxVersion"
+    implementation "io.github.libktx:ktx-async:$ktxVersion"
+    implementation "io.github.libktx:ktx-box2d:$ktxVersion"
+    implementation "io.github.libktx:ktx-inject:$ktxVersion"
+    implementation "io.github.libktx:ktx-app:$ktxVersion"
+    implementation "io.github.libktx:ktx-math:$ktxVersion"
+    implementation "io.github.libktx:ktx-assets:$ktxVersion"
+    implementation "io.github.libktx:ktx-i18n:$ktxVersion"
+    implementation "io.github.libktx:ktx-actors:$ktxVersion"
+    implementation "io.github.libktx:ktx-collections:$ktxVersion"
+    implementation "io.github.libktx:ktx-style:$ktxVersion"
+}
+
+sourceSets.main.java.srcDirs = [ "src/" ]
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+}

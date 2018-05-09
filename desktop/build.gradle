@@ -1,0 +1,32 @@
+apply plugin: 'kotlin'
+
+sourceCompatibility = 1.6
+sourceSets.main.java.srcDirs = [ 'src/' ]
+sourceSets.main.resources.srcDirs += [ '../android/assets' ]
+
+mainClassName = 'com.central.desktop.DesktopLauncher'
+
+run {
+    ignoreExitValue = true
+}
+
+jar {
+    archiveName "${appName}-${version}.jar"
+    from { configurations.compile.collect { zipTree(it) } }
+    manifest {
+        attributes 'Main-Class': project.mainClassName
+    }
+}
+
+dependencies {
+    implementation project(":core")
+    implementation "io.github.libktx:ktx-app:$ktxVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    implementation "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
+    implementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+    implementation "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
+    implementation "com.badlogicgames.gdx:gdx-controllers-desktop:$gdxVersion"
+    implementation "com.badlogicgames.gdx:gdx-controllers-platform:$gdxVersion:natives-desktop"
+    implementation "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
+    implementation "com.badlogicgames.gdx:gdx-tools:$gdxVersion"
+}

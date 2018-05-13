@@ -25,7 +25,7 @@ dependencies {
     implementation "io.github.libktx:ktx-style:$ktxVersion"
 }
 
-sourceSets.main.java.srcDirs = [ "src/" ]
+sourceSets.main.java.srcDirs = ['src/']
 buildscript {
     repositories {
         mavenCentral()

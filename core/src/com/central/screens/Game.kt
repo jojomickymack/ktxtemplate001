@@ -2,6 +2,7 @@ package com.central.screens
 
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType
 import com.central.Application
 import com.badlogic.gdx.scenes.scene2d.Stage
 import ktx.app.KtxScreen

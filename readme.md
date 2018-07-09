@@ -15,5 +15,6 @@ Notes
 
 I did a few write-ups on my blog descibing how to integrate tiled maps with your game.
 
-[http://www.reverie.fun/blog/libktx-platformer](http://www.reverie.fun/blog/libktx-platformer)
+[http://www.reverie.fun/blog/libgdx-kotlin](http://www.reverie.fun/blog/libgdx-kotlin)  
+[http://www.reverie.fun/blog/libktx-platformer](http://www.reverie.fun/blog/libktx-platformer)  
 

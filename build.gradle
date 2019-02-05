@@ -1,10 +1,10 @@
 buildscript {
     ext {
         appName = 'ktx-template'
-        kotlinVersion = '1.2.41'
+        kotlinVersion = '1.2.70'
         kotlinCoroutinesVersion = '0.22.5'
-        gdxVersion = '1.9.7'
-        ktxVersion = '1.9.8-b2'
+        gdxVersion = '1.9.8'
+        ktxVersion = '1.9.8-b5'
         box2dlightsVersion = '1.4'
     }
 

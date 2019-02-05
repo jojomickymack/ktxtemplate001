@@ -20,26 +20,28 @@ class Game(val application: Application) : KtxScreen {
     override fun render(delta: Float) {
         rotation += 1f
 
-        sr.begin(ShapeType.Line)
-        sr.translate(width / 2, height / 2, 0f)
-        sr.rotate(0f, 0f, 1f, rotation)
-        sr.color = Color.WHITE
-        sr.rect(0f - 75, 0f - 75, 150f, 150f)
-        sr.end()
+        with(sr) {
+            begin(ShapeType.Line)
+            translate(width / 2, height / 2, 0f)
+            rotate(0f, 0f, 1f, rotation)
+            color = Color.WHITE
+            rect(0f - 75, 0f - 75, 150f, 150f)
+            end()
 
-        sr.begin(ShapeType.Filled)
-        sr.identity()
-        sr.color = Color.RED
-        sr.circle(0f, 0f, 200f, 25)
+            begin(ShapeType.Filled)
+            identity()
+            color = Color.RED
+            circle(0f, 0f, 200f, 25)
 
-        sr.color = Color.PINK
-        sr.circle(0f, height, 200f, 25)
+            color = Color.PINK
+            circle(0f, height, 200f, 25)
 
-        sr.color = Color.YELLOW
-        sr.circle(width, height, 200f, 25)
+            color = Color.YELLOW
+            circle(width, height, 200f, 25)
 
-        sr.color = Color.BLUE
-        sr.circle(width, 0f, 200f, 25)
-        sr.end()
+            color = Color.BLUE
+            circle(width, 0f, 200f, 25)
+            end()
+        }
     }
 }

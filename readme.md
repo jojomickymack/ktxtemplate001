@@ -16,8 +16,8 @@ enabled (there's a checkbox).
 
 I did a few write-ups on my blog descibing how to integrate tiled maps with your game.
 
-[https://jojomickymack.gitlab.io/reverie/post/libgdx_kotlin](https://jojomickymack.gitlab.io/reverie/post/libgdx_kotlin)
-[https://jojomickymack.gitlab.io/reverie/post/libktx_platformer](https://jojomickymack.gitlab.io/reverie/post/libktx_platformer)
+[https://jojomickymack.gitlab.io/reverie/post/libgdx_kotlin](https://jojomickymack.gitlab.io/reverie/post/libgdx_kotlin)  
+[https://jojomickymack.gitlab.io/reverie/post/libktx_platformer](https://jojomickymack.gitlab.io/reverie/post/libktx_platformer)  
 
 here's one describing some how to get started with entity component systems - a concept that can help when you have a lot of game object to manage.
 

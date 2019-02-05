@@ -9,8 +9,9 @@ It's a minimal starting point to extend kdx, you should be able to open it in an
 
 Notes  
 
-- this was developed using gradle 4.6 - I'd recommend just installing that version of gradle and not using the gradle wrapper.  
-- gradle doesn't like a feature that's always on when opening in android studio - 'configure on demand' - you will get an error immediately when opening it for the first time - just go to settings in intellij, find 'compiler' under 'build, execution, and deployment' and uncheck 'configure on demand'  
+- this was developed using gradle 4.10.2 - lower versions of gradle or the gradle wrapper may have issues.  
+- if intellij fails immediately when opening the project, go into the settings and make sure that 'configure on demand' is not 
+enabled (there's a checkbox).  
 - intellij screws up when attempting to run 'DesktopLauncher' by right clicking - you need to run the ':desktop:application:run' task  
 
 I did a few write-ups on my blog descibing how to integrate tiled maps with your game.

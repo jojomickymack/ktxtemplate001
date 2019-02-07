@@ -96,12 +96,3 @@ project(':core') {
         }
     }
 }
-
-import com.badlogic.gdx.tools.texturepacker.TexturePacker
-task pack << {
-    TexturePacker.process(
-            'atlas', // Raw assets path.
-            'assets', // Output directory.
-            'skin' // Name of the generated atlas (without extension).
-    )
-}

@@ -25,7 +25,7 @@ android {
         exclude 'META-INF/robovm/ios/robovm.xml'
     }
     defaultConfig {
-        applicationId 'com.central'
+        applicationId 'com.central.KtxTemplate'
         minSdkVersion 9
         targetSdkVersion 26
         versionCode 1

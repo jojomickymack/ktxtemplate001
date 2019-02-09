@@ -3,9 +3,10 @@ apply plugin: 'kotlin'
 sourceCompatibility = 1.6
 
 sourceSets.main.java.srcDirs = ['src/']
+sourceSets.main.kotlin.srcDirs = ['src/']
 sourceSets.main.resources.srcDirs += ['../android/assets']
 
-mainClassName = 'com.central.desktop.DesktopLauncher'
+mainClassName = 'com.central.DesktopLauncher'
 
 run {
     ignoreExitValue = true

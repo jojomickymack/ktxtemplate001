@@ -6,6 +6,8 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType.*
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer
 import com.central.App
 import ktx.app.KtxScreen
+import ktx.graphics.*
+
 
 class Game(val application: App) : KtxScreen {
     private val sr = ShapeRenderer()
@@ -21,27 +23,27 @@ class Game(val application: App) : KtxScreen {
         rotation += 1f
 
         with(sr) {
-            begin(Line)
-            translate(width / 2, height / 2, 0f)
-            rotate(0f, 0f, 1f, rotation)
-            color = WHITE
-            rect(0f - 75, 0f - 75, 150f, 150f)
-            end()
+            use(Line) {
+                translate(width / 2, height / 2, 0f)
+                rotate(0f, 0f, 1f, rotation)
+                color = WHITE
+                rect(0f - 75, 0f - 75, 150f, 150f)
+            }
 
-            begin(Filled)
-            identity()
-            color = RED
-            circle(0f, 0f, 200f, 25)
+            use(Filled) {
+                identity()
+                color = RED
+                circle(0f, 0f, 200f, 25)
 
-            color = PINK
-            circle(0f, height, 200f, 25)
+                color = PINK
+                circle(0f, height, 200f, 25)
 
-            color = YELLOW
-            circle(width, height, 200f, 25)
+                color = YELLOW
+                circle(width, height, 200f, 25)
 
-            color = BLUE
-            circle(width, 0f, 200f, 25)
-            end()
+                color = BLUE
+                circle(width, 0f, 200f, 25)
+            }
         }
     }
 }

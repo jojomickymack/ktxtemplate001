@@ -22,6 +22,7 @@ dependencies {
     implementation "io.github.libktx:ktx-actors:$ktxVersion"
     implementation "io.github.libktx:ktx-collections:$ktxVersion"
     implementation "io.github.libktx:ktx-style:$ktxVersion"
+    implementation "io.github.libktx:ktx-graphics:$ktxVersion"
 }
 
 sourceSets.main.java.srcDirs = ['src/']

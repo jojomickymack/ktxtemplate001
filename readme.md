@@ -1,4 +1,4 @@
-## Starter Project Template For LibKDX
+## Starter Project Template For LibKTX
 
 [Libktx](https://libktx.github.io/) is a library which is ideal for people who want to use libgdx with kotlin. While interacting with gdx libraries 
 directly with kotlin is possible, ktx provides libraries which wrap gdx and make using it more kotlin-centric and idiomatic.

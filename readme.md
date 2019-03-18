@@ -15,15 +15,23 @@ I use this project as a starter for a new project and I also like to replace 'co
 only need to change the desktop/src/com/central/DesktopLauncher.kt file so it starts the main application class of whatever project you 
 dropped in there.
 
-# Making It Your Own
+# Changing The Package Name
 
-You probably want to change the project package name eventually, which is com.central (really generic) - when you change it in the core module, also change it in the android and desktop modules - that keeps things consistent and also makes it so you don't have to import anything in the core com.central package (or whatever you change it to).
+You probably want to change the project package name eventually, which is com.central (really generic)
 
-When you change that path, change the mainClassName in the desktop/build.gradle file - that's what allows the 'application::run' task to work. If you don't see the 'application::run' task, click on thee gradle tab on the far right side of the screen and expand the 'desktop' module, and you should see 'application', and when you expand that, there's the 'run' task - double click on that to launch the desktop target.
+- in the core module
+  - create a new package path and move all of the classes into it - Android Studio will update the package paths in the files
+  - change the package in the android and desktop modules to match the core package path - that keeps things consistent and also makes it so you don't have to import anything in the Launcher classes (they share the same namespace)
+- in the desktop module
+  - in the build.gradle file, change the mainClassName so it matches your new package path - that's what allows the 'application::run' task to work
+- in the android module
+  - in the build.gradle file, change the application id so it isn't com.central anymore
+  - in the AndroidManifest.xml, change the 'package name' so it matches the new package path
+  - in android/res/strings.xml, change the name of the app from 'Ktx Template' to whatever you want.
+- in the root of the project's build.gradle
+  - change the appName from ktx-template to whatever you want.
 
-Also, open the build.gradle file in the android module and change the application id so it isn't com.central.KtxTemplate anymore. Don't forget to also change the 'package name' and 'activity name' fields in the AndroidManifest.xml Finally, go into the android/res/strings.xml file and change the name of the app from 'Ktx Template' to whatever you want.
-
-In the main build.gradle file (in the root of the project) change the appName from ktx-template to whatever you want.
+If you run into issues immediately after doing that...
 
 Sometimes Android will get messed up if you install an app, change the id or something else about it, and attempt to debug it - it'll say that the app couldn't be uninstalled. The way I've solved this in the past is by manually uninstalling the app from the device (you might have to go into the settings and find the app under apps there), and run the 'android::build::cleanBuildCache' task from Android Studio.
 
@@ -44,6 +52,8 @@ directory, or the gradlew, gradlew.bat files when you do it that way.
 
 [https://gradle.org/release](https://gradle.org/release)
 
+# Some Tutorials
+
 I did a few write-ups on my blog descibing how to integrate tiled maps with your game.
 
 [https://jojomickymack.gitlab.io/reverie/post/libgdx_kotlin](https://jojomickymack.gitlab.io/reverie/post/libgdx_kotlin)  
@@ -53,3 +63,6 @@ here's one describing some how to get started with entity component systems - a 
 
 [https://jojomickymack.gitlab.io/reverie/post/ashley_ecs](https://jojomickymack.gitlab.io/reverie/post/ashley_ecs)
 
+# What Else?
+
+If you take a bunch of java code and paste it into a kotlin file, Android Studio will ask if you want it to have it turn the java code into kotlin - this is a great way to take some libgdx examples in java and try it out in kotlin. You might want to [start with this](https://libgdx.info/basic_image) if you haven't used scene2d before.

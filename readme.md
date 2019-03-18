@@ -15,6 +15,18 @@ I use this project as a starter for a new project and I also like to replace 'co
 only need to change the desktop/src/com/central/DesktopLauncher.kt file so it starts the main application class of whatever project you 
 dropped in there.
 
+# Quick Start
+
+Your game goes in the 'core' module inside of 'core/src/com/central'. Ktx has a class called 'KtxGame', which is the whole application, and KtxScreen, which is like a scene. This example only has one screen, which is called 'Game', which is inside the 'core/src/com/central/screens' folder. This is where you can load images, sounds, etc. Libgdx turns off Java garbage collection for your assets - so for all of the types listed on this page with [libgdx documentation on memory management](https://github.com/libgdx/libgdx/wiki/Memory-management), you should call their 'dispose()' method inside of the screen's 'dispose' function. There are tools, like AssetManager, which help with this, but you probably don't need to think about that until your game gets a little bigger.
+
+# Run The App
+
+Run the desktop launcher - you can either right click on 'desktop/src/com/central/DesktopLauncher.kt' and run it from Android Studio, or use the gradle task (click on the gradle tab on the far right to reveal gradle tasks) and expand the 'desktop::application' groups. The 'run' task, which is added by the 'application plugin' in gradle, will also run the desktop launcher.
+
+# Executable Jar
+
+Do you want to compile an executable jar to distribute the desktop version of your game? I added [John Rengelman's shadowjar plugin](https://github.com/johnrengelman/shadow) to the desktop module, which will create a fatjar (containing all dependencies in one). When you run the 'desktop::shadow::shadowJar' task, it will create your fatjar in 'desktop/build/libs'. You should be able to double click on the jar file to launch it.
+
 # Changing The Package Name
 
 You probably want to change the project package name eventually, which is com.central (really generic)

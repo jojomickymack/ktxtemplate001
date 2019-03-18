@@ -1,4 +1,16 @@
 apply plugin: 'kotlin'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+mainClassName = 'com.central.DesktopLauncher'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:4.0.4'
+    }
+}
 
 sourceCompatibility = 1.6
 
@@ -6,18 +18,8 @@ sourceSets.main.java.srcDirs = ['src/']
 sourceSets.main.kotlin.srcDirs = ['src/']
 sourceSets.main.resources.srcDirs += ['../android/assets']
 
-mainClassName = 'com.central.DesktopLauncher'
-
 run {
     ignoreExitValue = true
-}
-
-jar {
-    archiveName "${appName}-${version}.jar"
-    from { configurations.compile.collect { zipTree(it) } }
-    manifest {
-        attributes 'Main-Class': project.mainClassName
-    }
 }
 
 dependencies {

@@ -6,6 +6,7 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration
 object DesktopLauncher {
     @JvmStatic
     fun main(args: Array<String>) {
-        LwjglApplication(App(), LwjglApplicationConfiguration())
+        val config = LwjglApplicationConfiguration()
+        LwjglApplication(App(), config)
     }
 }

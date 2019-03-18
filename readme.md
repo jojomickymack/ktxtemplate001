@@ -33,9 +33,9 @@ You probably want to change the project package name eventually, which is com.ce
 
 If you run into issues immediately after doing that...
 
-Sometimes Android will get messed up if you install an app, change the id or something else about it, and attempt to debug it - it'll say that the app couldn't be uninstalled. The way I've solved this in the past is by manually uninstalling the app from the device (you might have to go into the settings and find the app under apps there), and run the 'android::build::cleanBuildCache' task from Android Studio.
+Sometimes Android will get messed up if you install an app, change the id or something else about it, and attempt to debug it again - it'll say that the app couldn't be uninstalled. The way I've solved this in the past is by manually uninstalling the app from the device (you might have to go into the settings and find the app under apps there), and run the 'android::build::cleanBuildCache' task from Android Studio.
 
-If you're really stuck, close Android Studio, delete the .idea, .gradle, build directories and any .iml files (don't forget the build directory inside of each module) - then just open Android Studio again and tell it to open the project directory again. It will regenerate everything fresh, sometimes that helps it figure out what it's supposed to do.
+If you're really stuck, close Android Studio, delete the .idea, .gradle, build directories and any .iml files (don't forget the build directory inside of each module) - then just open Android Studio again and tell it to open the project directory again. It will replace what you just deleted and the next build will be from scratch - sometimes that can resolve problems. That's also what I do when making a new version of a project - just copy the folder, delete those folders, change the name of the folder to what you want Android Studio to think the project is called, and open the folder in Android Studio.
 
 # Additional Notes  
 

@@ -23,6 +23,10 @@ Your game goes in the 'core' module inside of 'core/src/com/central'. Ktx has a 
 
 Run the desktop launcher - you can either right click on 'desktop/src/com/central/DesktopLauncher.kt' and run it from Android Studio, or use the gradle task (click on the gradle tab on the far right to reveal gradle tasks) and expand the 'desktop::application' groups. The 'run' task, which is added by the 'application plugin' in gradle, will also run the desktop launcher.
 
+# Kotlin Not Required
+
+This project will look for Java or Kotlin files inside of 'core/src' - if you remove the kotlin files and replace them with Java files, it'll work the same way if you load the Java code in the launchers (maybe you are following a Java tutorial or something).
+
 # Executable Jar
 
 Do you want to compile an executable jar to distribute the desktop version of your game? I added [John Rengelman's shadowjar plugin](https://github.com/johnrengelman/shadow) to the desktop module, which will create a fatjar (containing all dependencies in one). When you run the 'desktop::shadow::shadowJar' task, it will create your fatjar in 'desktop/build/libs'. You should be able to double click on the jar file to launch it.
@@ -77,4 +81,8 @@ here's one describing some how to get started with entity component systems - a 
 
 # What Else?
 
-If you take a bunch of java code and paste it into a kotlin file, Android Studio will ask if you want it to have it turn the java code into kotlin - this is a great way to take some libgdx examples in java and try it out in kotlin. You might want to [start with this](https://libgdx.info/basic_image) if you haven't used scene2d before.
+If you take a bunch of java code and paste it into a kotlin file, Android Studio will ask if you want it to have it turn the java code into kotlin - this is a great way to take some libgdx examples in java and try it out in kotlin. You can take some Java or Kotlin example code and put it into the 'core/src' directory and change the launchers to they bootstrap the Java code instead of 'com.central.App'.
+
+If you're looking for general libgdx tutorials, you might want to [start with this](https://libgdx.info/basic_image) if you haven't used scene2d before.
+
+I hope this project helps you have fun and makes it easier to get up and running!

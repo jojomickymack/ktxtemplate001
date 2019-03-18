@@ -29,7 +29,7 @@ This project will look for Java or Kotlin files inside of 'core/src' - if you re
 
 # Executable Jar
 
-Do you want to compile an executable jar to distribute the desktop version of your game? I added [John Rengelman's shadowjar plugin](https://github.com/johnrengelman/shadow) to the desktop module, which will create a fatjar (containing all dependencies in one). When you run the 'desktop::shadow::shadowJar' task, it will create your fatjar in 'desktop/build/libs'. You should be able to double click on the jar file to launch it.
+Do you want to compile an executable jar to distribute the desktop version of your game? I added [John Rengelman's shadowjar plugin](https://github.com/johnrengelman/shadow) to the desktop module, which will create a fatjar (containing all dependencies in one). When you run the 'desktop::shadow::shadowJar' task, it will create your fatjar in 'desktop/build/libs'. You should be able to double click on the jar file to launch your game.
 
 # Changing The Package Name
 

@@ -15,7 +15,19 @@ I use this project as a starter for a new project and I also like to replace 'co
 only need to change the desktop/src/com/central/DesktopLauncher.kt file so it starts the main application class of whatever project you 
 dropped in there.
 
-Notes  
+# Tips
+
+You probably want to change the project package name eventually, which is com.central (really generic) - when you change it in the core module, also change it in the android and desktop modules - that keeps things consistent and also makes it so you don't have to import anything in the core com.central package (or whatever you change it to).
+
+When you change that path, change the mainClassName in the desktop/build.gradle file - that's what allows the 'application::run' task to work. If you don't see the 'application::run' task, click on thee gradle tab on the far right side of the screen and expand the 'desktop' module, and you should see 'application', and when you expand that, there's the 'run' task - double click on that to launch the desktop target.
+
+Also, open the build.gradle file in the android module and change the application id so it isn't com.central.KtxTemplate anymore. Don't forget to also change the 'package name' and 'activity name' fields in the AndroidManifest.xml Finally, go into the android/res/strings.xml file and change the name of the app from 'Ktx Template' to whatever you want.
+
+Sometimes Android will get messed up if you install an app, change the id or something else about it, and attempt to debug it - it'll say that the app couldn't be uninstalled. The way I've solved this in the past is by manually uninstalling the app from the device (you might have to go into the settings and find the app under apps there), and run the 'android::build::cleanBuildCache' task from Android Studio.
+
+If you're really stuck, close Android Studio, delete the .idea, .gradle, build directories and any .iml files (don't forget the build directory inside of each module) - then just open Android Studio again and tell it to open the project directory again. It will regenerate everything fresh, sometimes that helps it figure out what it's supposed to do.
+
+# Additional Notes  
 
 - android studio may ask you if you want to update 'android gradle plugin', just click on 'don't remind me again for this 
 project' since it can screw up the build files

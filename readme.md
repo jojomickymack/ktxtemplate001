@@ -17,7 +17,12 @@ dropped in there.
 
 # Quick Start
 
-Your game goes in the 'core' module inside of 'core/src/com/central'. Ktx has a class called 'KtxGame', which is the whole application, and KtxScreen, which is like a scene. This example only has one screen, which is called 'Game', which is inside the 'core/src/com/central/screens' folder. This is where you can load images, sounds, etc. Libgdx turns off Java garbage collection for your assets - so for all of the types listed on this page with [libgdx documentation on memory management](https://github.com/libgdx/libgdx/wiki/Memory-management), you should call their 'dispose()' method inside of the screen's 'dispose' function. There are tools, like AssetManager, which help with this, but you probably don't need to think about that until your game gets a little bigger.
+Your game goes in the 'core' module inside of 'core/src/com/central'. Ktx has a class called 'KtxGame', which is the whole application, and 
+KtxScreen, which is like a scene. This example only has one screen, which is called 'Game', which is inside the 'core/src/com/central/screens' folder. This is where you can load images, sounds, etc. Libgdx turns off Java garbage collection for your assets - so for all of the types listed on this page with [libgdx documentation on memory management](https://github.com/libgdx/libgdx/wiki/Memory-management), you should call their 'dispose()' method inside of the screen's 'dispose' function. There are tools, like AssetManager, which help with this, but you probably don't need to think about that until your game gets a little bigger. 
+
+I'm anticipating that you're going to need a camera and stage, and those are available in the 'App' class, which is exposed to 'Game' as an 
+argument - take a look at [the scene2d documentation](https://github.com/libgdx/libgdx/wiki/Scene2d) and add some images, sprites etc to the 
+game. Don't forget to add stg.act(delta) and stg.draw() to the render function after adding Actors to the stage.
 
 # Run The App
 

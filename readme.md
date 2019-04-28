@@ -24,6 +24,12 @@ I'm anticipating that you're going to need a camera and stage, and those are ava
 argument - take a look at [the scene2d documentation](https://github.com/libgdx/libgdx/wiki/Scene2d) and add some images, sprites etc to the 
 game. Don't forget to add stg.act(delta) and stg.draw() to the render function after adding Actors to the stage.
 
+For examples of what I'm talking about, see these examples which build off of this template.
+
+[https://github.com/jojomickymack/on_screen_gamepad01](https://github.com/jojomickymack/on_screen_gamepad01)  
+
+[https://github.com/jojomickymack/superkrab](https://github.com/jojomickymack/superkrab)  
+
 # Run The App
 
 Run the desktop launcher - you can either right click on 'desktop/src/com/central/DesktopLauncher.kt' and run it from Android Studio, or use the gradle task (click on the gradle tab on the far right to reveal gradle tasks) and expand the 'desktop::application' groups. The 'run' task, which is added by the 'application plugin' in gradle, will also run the desktop launcher.
